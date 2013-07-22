@@ -10,6 +10,6 @@ define git::clone($repository,
   exec { "git clone ${repository}":
     cwd     => $path,
     creates => "${path}/${name}",
-    require => Class[ 'composer' ]
+    require => Package[ 'git' ]
   }
 }
